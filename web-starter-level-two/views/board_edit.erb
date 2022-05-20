@@ -1,0 +1,19 @@
+<h1>Edit Advert</h1>
+
+<form action="/board/"<%= index %>" method="POST">
+    <input type="hidden" name="_method" value="PATCH">
+  <div>
+    <label for="title">Number</label>
+    <br>
+    <input type="text" id="title" name="number" value="<%= entry.number %>">
+  </div>
+  
+  <div>
+    <label for="description">Description</label>
+    <br>
+    <input type="text" id="description" name="description" value="<%= entry.description %>">
+  </div>
+
+  <input type="submit" value="Update">
+</form>
+

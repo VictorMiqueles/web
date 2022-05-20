@@ -1,0 +1,30 @@
+<h1>Animals</h1>
+
+<% if animals.empty? %>
+  There are no animals.
+<% else %>
+  <% animals.each_with_index do |animal, index| %>
+    <section>
+      <h2><%= animal %></h2>
+
+      <p>
+        <a href="/animals/<%= index %>/edit">
+          <button>Edit <%= animal %></button>
+        </a>
+      </p>
+
+      <form action="/animals/<%= index %>" method="POST">
+        <%#
+          This hidden input is necessary for Sinatrato recognise
+          this as a DELETE request.
+        %>
+        <input type="hidden" name="_method" value="DELETE">
+        <button>Delete <%= animal %></button>
+      </form>
+    </section>
+  <% end %>
+<% end %>
+
+<p>
+  <a href="/animals/new">Add Animal</a>
+</p>

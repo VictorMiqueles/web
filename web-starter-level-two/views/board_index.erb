@@ -1,0 +1,23 @@
+<h1> Board </h1>
+
+<%if adverts.empty?%> 
+  Your board has no adverts.
+  <%else%>
+    <%adverts.each_with_index do |advert, index|%>
+      <article>
+        <h2><%=advert.number%></h2>
+        <p><%=advert.description%></p>
+
+        <a href="/board/<%= index %>/edit"  id="edit_<%= index %>">Edit Entry</a>
+
+        <form action="/board/<%= index %>" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" id="delete_<%= index %>" value="Delete">
+        </form>
+      </article>
+    <%end%>
+<%end%>
+
+<p>
+<a href="/board/new">Add Advert</a>
+</p>

@@ -78,7 +78,7 @@ RSpec.describe 'Board features', type: :feature do
     fill_in "Description", with: "White cat"
     click_button "Post" 
 
-    click_button "edit_1"
+    click_link "edit_1"
 
     fill_in "Number", with: "07364843799"
     fill_in "Description", with: "Big Black cat"
